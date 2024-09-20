@@ -9,28 +9,43 @@
   <body>
     <header id="header">
       <button id="skipnavigation">Pular Navegação</button>
-      <div id="header-leftside">
-        <div id="header-logo">
-          <img src="./"/>
+      <div id="header-mobile-navigation">
+        <div class="side-by-side">
+          <div id="header-mobile-leftside">
+            <div class="header-logo">
+              <img src="./" />
+            </div>
+            <span class="header-logo-text">FenneCo.</span>
+          </div>
+          <div id="header-mobile-rightside">
+            <button id></button>
+          </div>
         </div>
-        <span id="header-logo-text">FenneCo.</span>
       </div>
-      <div id="header-rightside">
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#about">Sobre</a>
-          <a href="#purchase">Comprar</a>
-          <a href="#team">equipe</a>
-        </nav>
-        <button class="callToAction">Jogar Agora</button>
+      <div class="side-by-side">
+        <div id="header-leftside">
+          <div class="header-logo">
+            <img src="./"/>
+          </div>
+          <span class="header-logo-text">FenneCo.</span>
+        </div>
+        <div id="header-rightside">
+          <nav id="header-desktop-navigation">
+            <a href="#home">Home</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">Sobre</a>
+            <a href="#purchase">Comprar</a>
+            <a href="#team">equipe</a>
+          </nav>
+          <button class="callToAction">Jogar Agora</button>
+        </div>
       </div>
     </header>
     <section id="home">
       <div id="home-background"></div>
       <div id="home-content">
-        <div id="home-logowrapper">
-          <img src="./"/>
+        <div class="logo-wrapper">
+          <img src="./">
         </div>
         <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Vocẽ foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
         <p>Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
@@ -38,7 +53,7 @@
       </div>
     </section>
     <section id="reviews">
-      <h1>Reviews</h1>
+      <h1 class="section-title">Reviews</h1>
       <div id="reviews-card-container">
         <div class="review-card">
           <div class="review-card-stars-container">
@@ -67,26 +82,124 @@
         <a href="./">Ler mais reviews</a>
       </div>
     </section>
-    <section id="sobre">
-      <h1>Sobre</h1>
-      <div id="sobre-content-wrapper">
-        <div class='sobre-item'>
-          <div class="sobre-item-leftside sobre-item-imgcontainer">
+    <section id="about">
+      <h1 class="section-title">Sobre</h1>
+      <div id="about-content-wrapper">
+        <div class='about-item'>
+          <div class="about-item-leftside about-item-imgcontainer">
             <img src="./" alt="">
           </div>
-          <div class="sobre-item-rightside">
+          <div class="about-item-rightside">
             <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Vocẽ foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
           </div>
         </div>
-        <div class='sobre-item'>
-          <div class="sobre-item-rightside">
+        <div class='about-item'>
+          <div class="about-item-rightside">
             <p>Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
           </div>
-          <div class="sobre-item-rightside sobre-item-imgcontainer">
+          <div class="about-item-rightside about-item-imgcontainer">
             <img src="./" alt="">
           </div>
         </div>
       </div>
     </section>
+    <section id="purchase">
+      <h1 class="section-title">Comprar</h1>
+      <div id="purchase-content-wrapper">
+        <div id="purchase-background"></div>
+        <div id="purchase-foreground">
+          <div class="logo-wrapper">
+            <img src="./">
+          </div>
+          <button class="callToAction">Comprar Agora</button>
+        </div>
+      </div>
+    </section>
+    <section id="team">
+      <h1 class="section-title">Equipe</h1>
+      <div class="team-grid-container">
+        <div class="team-card">
+          <div class="team-card-image-wrapper">
+            <img src="./">
+          </div>
+          <span class="team-card-name">Emanuel Franklyn de Lima Maciel</span>
+        </div>
+        <div class="team-card">
+          <div class="team-card-image-wrapper">
+            <img src="./">
+          </div>
+          <span class="team-card-name">Emmanuel Florêncio Leite</span>
+        </div>
+        <div class="team-card">
+          <div class="team-card-image-wrapper">
+            <img src="./">
+          </div>
+          <span class="team-card-name">Isadora Pereira Maciel</span>
+        </div>
+        <div class="team-card">
+          <div class="team-card-image-wrapper">
+            <img src="./">
+          </div>
+          <span class="team-card-name">José Wilson Lins Pereira</span>
+        </div>
+        <div class="team-card">
+          <div class="team-card-image-wrapper">
+            <img src="./">
+          </div>
+          <span class="team-card-name">Maria Clara Lourenço de Lira</span>
+        </div>
+      </div>
+    </section>
+    <footer id="footer" class="side-by-side">
+      <div id="footer-leftside">
+        <div class="logo-wrapper">
+          <img src="./">
+        </div>
+        <p id="footer-description">Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
+        <button class="callToAction">Jogar Agora</button>
+      </div>
+      <div id="footer-rightside">
+        <div id="footer-social-container">
+          <span id="footer-social-container-title">Nos siga nas redes sociais!</span>
+          <a class="footer-social-item">
+            <span class="footer-social-item-at">FennekoCorp</span>
+            <div class="footer-social-item-icon-wrapper">
+              <img src="./">
+            </div>
+          </a>
+          <a class="footer-social-item">
+            <span class="footer-social-item-at">Fenneko_Corporation</span>
+            <div class="footer-social-item-icon-wrapper">
+              <img src="./">
+            </div>
+          </a>
+          <a class="footer-social-item">
+            <span class="footer-social-item-at">Fenneko-Corp</span>
+            <div class="footer-social-item-icon-wrapper">
+              <img src="./">
+            </div>
+          </a>
+          <a class="footer-social-item">
+            <span class="footer-social-item-at">FenneCo_LTDA</span>
+            <div class="footer-social-item-icon-wrapper">
+              <img src="./">
+            </div>
+          </a>
+        </div>
+        <nav id="footer-navigation">
+          <a class="footer-nav-item" href="#home">Home</a>
+          <div class="footer-nav-spacer"></div>
+          <a class="footer-nav-item" href="#reviews">Reviews</a>
+          <div class="footer-nav-spacer"></div>
+          <a class="footer-nav-item" href="#about">Sobre</a>
+          <div class="footer-nav-spacer"></div>
+          <a class="footer-nav-item" href="#purchase">Comprar</a>
+          <div class="footer-nav-spacer"></div>
+          <a class="footer-nav-item" href="#team">Equipe</a>
+          <div class="footer-nav-spacer"></div>
+          <a class="footer-nav-item" href="./">Politícas e privacidade</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
