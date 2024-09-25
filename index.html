@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>V.H.S. The Game</title>
+    <link rel="icon" href="./assets/images/Logo.ico" type="image/x-icon">
     <link href="./index.css" rel="stylesheet" type="text/css"/>
+    <script src="./index.js" type="text/javascript" defer></script>
   </head>
   <body>
     <header id="header">
-      <button id="skipnavigation">Pular Navegação</button>
-      <div id="header-mobile-navigation">
+      <button id="skipnavigation" onclick="skipNavigation()">Pular Navegação</button>
+      <div id="header-mobile-navigation" class="mobile-only">
         <div class="side-by-side">
           <div id="header-mobile-leftside">
             <div class="header-logo">
@@ -18,27 +20,30 @@
             <span class="header-logo-text">FenneCo.</span>
           </div>
           <div id="header-mobile-rightside">
-            <button id></button>
+            <button id=""></button>
           </div>
         </div>
       </div>
-      <div class="side-by-side">
-        <div id="header-leftside">
-          <div class="header-logo">
-            <img src="./"/>
-          </div>
-          <span class="header-logo-text">FenneCo.</span>
+      <div id="header-leftside">
+        <div id="header-logo">
+          <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 360" width="506" height="360"><path id="logo-stroke" d="m48.2 349.6c45.8 0 153.3-94.2 153.3-94.2 0 0 31.1 6.6 51.5 6.6 20.3 0 51.5-6.6 51.5-6.6 0 0 107.5 94.2 153.2 94.2 96 0-17.2-263.9-45.7-277.7-107.3-51.8-108-61.5-159-61.5-50.9 0-51.7 9.7-159 61.5-28.5 13.8-141.8 277.7-45.8 277.7z"/><path id="logo-fill" d="m303 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-fill" d="m203 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-stroke" d="m201.5 116c0 0 0-44.1 51.5-44.1 51.5 0 51.5 44.1 51.5 44.1"/></svg>
         </div>
-        <div id="header-rightside">
-          <nav id="header-desktop-navigation">
-            <a href="#home">Home</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#about">Sobre</a>
-            <a href="#purchase">Comprar</a>
-            <a href="#team">equipe</a>
-          </nav>
-          <button class="callToAction">Jogar Agora</button>
-        </div>
+        <span id="header-logo-text">FenneCo.</span>
+      </div>
+      <div id="header-rightside">
+        <nav id="header-desktop-navigation">
+          <a href="#home">Home</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#about">Sobre</a>
+          <a href="#purchase">Comprar</a>
+          <a href="#team">equipe</a>
+        </nav>
+        <button class="callToAction">Jogar Agora</button>
+        <button id="open-mobile-navigation" class="mobile-only">
+          <div class="hamburguer-menu-bar"></div>
+          <div class="hamburguer-menu-bar"></div>
+          <div class="hamburguer-menu-bar"></div>
+        </button>
       </div>
     </header>
     <section id="home">
@@ -47,8 +52,8 @@
         <div class="logo-wrapper">
           <img src="./">
         </div>
-        <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Vocẽ foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
-        <p>Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
+        <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Você foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
+        <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
         <button class="callToAction">Jogar Agora</button>
       </div>
     </section>
@@ -76,7 +81,7 @@
             <div class="review-card-star"></div>
           </div>
           <h2>PERFEITO!</h2>
-          <p>Esse jogo é indescritivel! Jogaria tudo novamente quantas vezes for preciso! Sem falar na história... Nossa! É de tirar o fôlego!</p>
+          <p>Esse jogo é indescritível! Jogaria tudo novamente quantas vezes for preciso! Sem falar na história... Nossa! É de tirar o fôlego!</p>
           <span>Linus Tech Tips</span>
         </div>
         <a href="./">Ler mais reviews</a>
@@ -90,12 +95,12 @@
             <img src="./" alt="">
           </div>
           <div class="about-item-rightside">
-            <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Vocẽ foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
+            <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Você foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
           </div>
         </div>
         <div class='about-item'>
           <div class="about-item-rightside">
-            <p>Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
+            <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
           </div>
           <div class="about-item-rightside about-item-imgcontainer">
             <img src="./" alt="">
@@ -155,7 +160,7 @@
         <div class="logo-wrapper">
           <img src="./">
         </div>
-        <p id="footer-description">Desafie-se nesse emocionante, e comico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
+        <p id="footer-description">Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
         <button class="callToAction">Jogar Agora</button>
       </div>
       <div id="footer-rightside">
@@ -197,7 +202,7 @@
           <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="#team">Equipe</a>
           <div class="footer-nav-spacer"></div>
-          <a class="footer-nav-item" href="./">Politícas e privacidade</a>
+          <a class="footer-nav-item" href="./">Politicas e privacidade</a>
         </nav>
       </div>
     </footer>
