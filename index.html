@@ -9,29 +9,40 @@
     <script src="./index.js" type="text/javascript" defer></script>
   </head>
   <body>
+    <div id="header-mobile-navigation" class="mobile-only closed">
+      <div id="header-mobile-top">
+        <div id="header-mobile-leftside">
+          <div class="header-logo">
+            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 360" width="506" height="360"><path id="logo-stroke" d="m48.2 349.6c45.8 0 153.3-94.2 153.3-94.2 0 0 31.1 6.6 51.5 6.6 20.3 0 51.5-6.6 51.5-6.6 0 0 107.5 94.2 153.2 94.2 96 0-17.2-263.9-45.7-277.7-107.3-51.8-108-61.5-159-61.5-50.9 0-51.7 9.7-159 61.5-28.5 13.8-141.8 277.7-45.8 277.7z"/><path id="logo-fill" d="m303 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-fill" d="m203 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-stroke" d="m201.5 116c0 0 0-44.1 51.5-44.1 51.5 0 51.5 44.1 51.5 44.1"/></svg>
+          </div>
+          <span class="header-logo-text">FenneCo.</span>
+        </div>
+        <div id="header-mobile-rightside">
+          <button id="header-mobile-close" onclick="closeMobileMenu()">
+            <div class="header-mobile-close-bar"></div>
+            <div class="header-mobile-close-bar"></div>
+          </button>
+        </div>
+      </div>
+      <nav id="header-mobile-nav">
+        <a class="active" href="#" onclick="scrollTo(0,0)">Home</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">Sobre</a>
+        <a href="#purchase">Comprar</a>
+        <a href="#team">Equipe</a>
+        <button class="callToAction">Jogar Agora</button>
+      </nav>
+    </div>
     <header id="header">
       <button id="skipnavigation" onclick="skipNavigation()">Pular Navegação</button>
-      <div id="header-mobile-navigation" class="mobile-only">
-        <div class="side-by-side">
-          <div id="header-mobile-leftside">
-            <div class="header-logo">
-              <img src="./" />
-            </div>
-            <span class="header-logo-text">FenneCo.</span>
-          </div>
-          <div id="header-mobile-rightside">
-            <button id=""></button>
-          </div>
-        </div>
-      </div>
       <div id="header-leftside">
-        <div id="header-logo">
+        <div class="header-logo">
           <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 360" width="506" height="360"><path id="logo-stroke" d="m48.2 349.6c45.8 0 153.3-94.2 153.3-94.2 0 0 31.1 6.6 51.5 6.6 20.3 0 51.5-6.6 51.5-6.6 0 0 107.5 94.2 153.2 94.2 96 0-17.2-263.9-45.7-277.7-107.3-51.8-108-61.5-159-61.5-50.9 0-51.7 9.7-159 61.5-28.5 13.8-141.8 277.7-45.8 277.7z"/><path id="logo-fill" d="m303 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-fill" d="m203 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-stroke" d="m201.5 116c0 0 0-44.1 51.5-44.1 51.5 0 51.5 44.1 51.5 44.1"/></svg>
         </div>
-        <span id="header-logo-text">FenneCo.</span>
+        <span class="header-logo-text">FenneCo.</span>
       </div>
       <div id="header-rightside">
-        <nav id="header-desktop-navigation">
+        <nav id="header-desktop-navigation" class="desktop-only">
           <a href="#" onclick="scrollTo(0,0)">Home</a>
           <a href="#reviews">Reviews</a>
           <a href="#about">Sobre</a>
@@ -39,8 +50,8 @@
           <a href="#team">Equipe</a>
           <div id="current-heading-indicator"></div>
         </nav>
-        <button class="callToAction">Jogar Agora</button>
-        <button id="open-mobile-navigation" class="mobile-only">
+        <button class="callToAction desktop-only">Jogar Agora</button>
+        <button id="open-mobile-navigation" class="mobile-only" onclick="openMobileNav()">
           <div class="hamburguer-menu-bar"></div>
           <div class="hamburguer-menu-bar"></div>
           <div class="hamburguer-menu-bar"></div>
@@ -55,7 +66,7 @@
         </div>
         <div id="home-description">
           <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Você foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
-          <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
+          <!-- <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p> -->
         </div>
         <button class="callToAction">Jogar Agora</button>
       </div>
@@ -66,11 +77,11 @@
         <div class="desktop-only"></div>
         <div class="review-card">
           <div class="review-card-stars-container">
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
           </div>
           <h2 class="card-title">Simplesmente INCRÍVEL!!!</h2>
           <p class="card-description">A jogabilidade é fenomenal!! A história por trás de tudo é perfeita, se encaixa perfeitamente com o estilo do jogo. Se souberem de um jogo melhor que V.H.S. me avisem, eu não vou hesitar em jogar!</p>
@@ -78,11 +89,11 @@
         </div>
         <div class="review-card">
           <div class="review-card-stars-container">
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
-            <img src="./assets/images/star.svg" class="review-card-star" />
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
+            <img src="./assets/images/star.svg" class="review-card-star" aria-hidden="true"/>
           </div>
           <h2 class="card-title">PERFEITO!</h2>
           <p class="card-description">Esse jogo é indescritível! Jogaria tudo novamente quantas vezes for preciso! Sem falar na história... Nossa! É de tirar o fôlego!</p>
@@ -96,7 +107,7 @@
       <div id="about-content-wrapper">
         <div class='about-item'>
           <div class="about-item-imgcontainer">
-            <img src="./assets/images/about1.png" alt="">
+            <img src="./assets/images/about1.png" alt="Base militar">
           </div>
           <div class="about-item-description">
             <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Você foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
@@ -107,7 +118,7 @@
             <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
           </div>
           <div class="about-item-imgcontainer">
-            <img src="./assets/images/about2.png" alt="">
+            <img src="./assets/images/about2.png" alt="Capa do jogo V.H.S.">
           </div>
         </div>
       </div>
@@ -126,7 +137,7 @@
     </section>
     <section id="team">
       <h1 class="section-title">Equipe</h1>
-      <div class="team-grid-container">
+      <div id="team-grid-container">
         <div class="team-card">
           <div class="team-card-image-wrapper">
             <img src="./assets/images/emanuelphoto.png">
@@ -145,17 +156,19 @@
           </div>
           <span class="team-card-name">Isadora Pereira Maciel</span>
         </div>
-        <div class="team-card">
-          <div class="team-card-image-wrapper">
-            <img src="./assets/images/willphoto.png">
+        <div id="two-last-cards">
+          <div class="team-card">
+            <div class="team-card-image-wrapper">
+              <img src="./assets/images/willphoto.png">
+            </div>
+            <span class="team-card-name">José Wilson Lins Pereira</span>
           </div>
-          <span class="team-card-name">José Wilson Lins Pereira</span>
-        </div>
-        <div class="team-card">
-          <div class="team-card-image-wrapper">
-            <img src="./assets/images/mariaclaraphoto.png">
+          <div class="team-card">
+            <div class="team-card-image-wrapper">
+              <img src="./assets/images/mariaclaraphoto.png">
+            </div>
+            <span class="team-card-name">Maria Clara Lourenço de Lira</span>
           </div>
-          <span class="team-card-name">Maria Clara Lourenço de Lira</span>
         </div>
       </div>
     </section>
@@ -173,39 +186,34 @@
           <a class="footer-social-item">
             <span class="footer-social-item-at">FennekoCorp</span>
             <div class="footer-social-item-icon-wrapper">
-              <img src="./">
+              <img src="./assets/images/instagramLogo.png">
             </div>
           </a>
           <a class="footer-social-item">
             <span class="footer-social-item-at">Fenneko_Corporation</span>
             <div class="footer-social-item-icon-wrapper">
-              <img src="./">
+              <img src="./assets/images/FacebookLogo.png">
             </div>
           </a>
           <a class="footer-social-item">
             <span class="footer-social-item-at">Fenneko-Corp</span>
             <div class="footer-social-item-icon-wrapper">
-              <img src="./">
+              <img src="./assets/images/TikTokLogo.png">
             </div>
           </a>
           <a class="footer-social-item">
             <span class="footer-social-item-at">FenneCo_LTDA</span>
             <div class="footer-social-item-icon-wrapper">
-              <img src="./">
+              <img src="./assets/images/RedditLogo.png">
             </div>
           </a>
         </div>
         <nav id="footer-navigation">
           <a class="footer-nav-item" href="#">Home</a>
-          <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="#reviews">Reviews</a>
-          <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="#about">Sobre</a>
-          <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="#purchase">Comprar</a>
-          <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="#team">Equipe</a>
-          <div class="footer-nav-spacer"></div>
           <a class="footer-nav-item" href="./">Politicas e privacidade</a>
         </nav>
       </div>
