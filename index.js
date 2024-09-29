@@ -52,20 +52,66 @@ window.addEventListener('resize', () => {
   calculateHeadingBar();
 });
 
-[...document.getElementById('header-mobile-nav').children].forEach((item, index, array) => {
-  item.addEventListener('click', () => {
-    array.filter((item2) => item2 !== item && item2.classList.contains('active')).map((item2) => item2.classList.remove('active'));
-    item.classList.add('active');
-    document.getElementById('header-mobile-navigation').classList.add('closed');
-  })
-});
-
 function openMobileNav() {
+  document.body.classList.add('mobile-nav-open');
   document.getElementById('header-mobile-navigation').classList.remove('closed');
 }
 
 function closeMobileMenu() {
+  document.body.classList.remove('mobile-nav-open');
   document.getElementById('header-mobile-navigation').classList.add('closed');
+}
+
+[...document.getElementById('header-mobile-nav').children].forEach((item, index, array) => {
+  item.addEventListener('click', () => {
+    array.filter((item2) => item2 !== item && item2.classList.contains('active')).map((item2) => item2.classList.remove('active'));
+    item.classList.add('active');
+    closeMobileMenu()
+  })
+});
+
+function isComputer() {
+  return !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+let isPlaying = false;
+
+function startPlaying() {
+  if (!isPlaying) {
+    document.getElementById('about').scrollIntoView();
+    closeMobileMenu();
+    [...document.getElementsByClassName('hide-when-playing')].forEach((item) => {
+      item.style.opacity = 0;
+    });
+    setTimeout(() => {
+      document.body.classList.add('isPlaying');
+      if (isComputer()) {
+        document.getElementById("desktop-device-only").classList.add('show');
+        startThree();
+      } else {
+        document.getElementById("mobile-device-only").classList.add('show');
+      }
+    }, 1000);
+    isPlaying = true;
+  }
+}
+
+function stopPlaying() {
+  if (isPlaying = true) {
+    reset3D();
+    isPlaying = false;
+    document.body.classList.remove('isPlaying');
+    setTimeout(() => {
+      [...document.getElementsByClassName('hide-when-playing')].forEach((item) => {
+        item.style.opacity = 1;
+      });
+    }, 50);
+    if (isComputer()) {
+      document.getElementById("desktop-device-only").classList.remove('show');
+    } else {
+      document.getElementById("mobile-device-only").classList.remove('show');
+    }
+  }
 }
 
 generateSections();

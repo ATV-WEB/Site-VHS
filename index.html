@@ -6,9 +6,17 @@
     <title>V.H.S. The Game</title>
     <link rel="icon" href="./assets/images/Logo.ico" type="image/x-icon">
     <link href="./index.css" rel="stylesheet" type="text/css"/>
-    <script src="./index.js" type="text/javascript" defer></script>
+    <script type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/" } } </script>
+    <script type="module" defer>
+      import { startThree, reset3D } from "./3d.js";
+      window.startThree = startThree;
+      window.reset3D = reset3D;
+    </script>
+    
+    <script src="./index.js" defer ></script>
   </head>
   <body>
+    <button id="skipnavigation" onclick="skipNavigation()">Pular Navegação</button>
     <div id="header-mobile-navigation" class="mobile-only closed">
       <div id="header-mobile-top">
         <div id="header-mobile-leftside">
@@ -30,11 +38,36 @@
         <a href="#about">Sobre</a>
         <a href="#purchase">Comprar</a>
         <a href="#team">Equipe</a>
-        <button class="callToAction">Jogar Agora</button>
+        <button class="callToAction" onclick="startPlaying()">Jogar Agora</button>
       </nav>
+      <div id="header-social-container">
+        <a class="header-social-item" href="">
+          <div class="footer-social-item-icon-wrapper">
+            <img src="./assets/images/instagramLogo.png">
+          </div>
+          <span class="footer-social-item-at">FennekoCorp</span>
+        </a>
+        <a class="header-social-item">
+          <div class="footer-social-item-icon-wrapper">
+            <img src="./assets/images/FacebookLogo.png">
+          </div>
+          <span class="footer-social-item-at">Fenneko_Corporation</span>
+        </a>
+        <a class="header-social-item">
+          <div class="footer-social-item-icon-wrapper">
+            <img src="./assets/images/TikTokLogo.png">
+          </div>
+          <span class="footer-social-item-at">Fenneko-Corp</span>
+        </a>
+        <a class="header-social-item">
+          <div class="footer-social-item-icon-wrapper">
+            <img src="./assets/images/RedditLogo.png">
+          </div>
+          <span class="footer-social-item-at">FenneCo_LTDA</span>
+        </a>
+      </div>
     </div>
     <header id="header">
-      <button id="skipnavigation" onclick="skipNavigation()">Pular Navegação</button>
       <div id="header-leftside">
         <div class="header-logo">
           <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 360" width="506" height="360"><path id="logo-stroke" d="m48.2 349.6c45.8 0 153.3-94.2 153.3-94.2 0 0 31.1 6.6 51.5 6.6 20.3 0 51.5-6.6 51.5-6.6 0 0 107.5 94.2 153.2 94.2 96 0-17.2-263.9-45.7-277.7-107.3-51.8-108-61.5-159-61.5-50.9 0-51.7 9.7-159 61.5-28.5 13.8-141.8 277.7-45.8 277.7z"/><path id="logo-fill" d="m303 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-fill" d="m203 203c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/><path id="logo-stroke" d="m201.5 116c0 0 0-44.1 51.5-44.1 51.5 0 51.5 44.1 51.5 44.1"/></svg>
@@ -50,7 +83,7 @@
           <a href="#team">Equipe</a>
           <div id="current-heading-indicator"></div>
         </nav>
-        <button class="callToAction desktop-only">Jogar Agora</button>
+        <button class="callToAction desktop-only" onclick="startPlaying()">Jogar Agora</button>
         <button id="open-mobile-navigation" class="mobile-only" onclick="openMobileNav()">
           <div class="hamburguer-menu-bar"></div>
           <div class="hamburguer-menu-bar"></div>
@@ -68,7 +101,7 @@
           <p>Um jogo de escape em primeira pessoa que coloca você no papel de um espião soviético preso em uma base estadunidense. Você foi capturado enquanto tentava roubar informações confidenciais e agora precisa encontrar uma maneira de escapar.</p>
           <!-- <p>Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p> -->
         </div>
-        <button class="callToAction">Jogar Agora</button>
+        <button class="callToAction" onclick="startPlaying()">Jogar Agora</button>
       </div>
     </section>
     <section id="reviews">
@@ -99,12 +132,23 @@
           <p class="card-description">Esse jogo é indescritível! Jogaria tudo novamente quantas vezes for preciso! Sem falar na história... Nossa! É de tirar o fôlego!</p>
           <span class="card-author">Linus Tech Tips</span>
         </div>
-        <a href="./" id="reviews-read-more">Ler mais reviews</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="reviews-read-more">Ler mais reviews</a>
       </div>
     </section>
     <section id="about">
-      <h1 class="section-title">Sobre</h1>
-      <div id="about-content-wrapper">
+      <div class="only-show-when-playing">
+        <button id="stopPlaying" onclick="stopPlaying()">
+          <div class="header-mobile-close-bar"></div>
+          <div class="header-mobile-close-bar"></div>
+        </button>
+        <div id="mobile-device-only">
+          <video src="./assets/videos/VHSCutscene.mp4" controls></video>
+        </div>
+        <div id="desktop-device-only">
+        </div>
+      </div>
+      <h1 class="section-title hide-when-playing">Sobre</h1>
+      <div id="about-content-wrapper" class="hide-when-playing">
         <div class='about-item'>
           <div class="about-item-imgcontainer">
             <img src="./assets/images/about1.png" alt="Base militar">
@@ -131,7 +175,7 @@
           <div class="logo-wrapper">
             <img src="./assets/images/VHSLogo.png">
           </div>
-          <button class="callToAction">Comprar Agora</button>
+          <button class="callToAction" onclick="startPlaying()">Comprar Agora</button>
         </div>
       </div>
     </section>
@@ -178,30 +222,30 @@
           <img src="./assets/images/VHSLogo.png">
         </div>
         <p id="footer-description">Desafie-se nesse emocionante, e cômico, jogo que demanda da sua estrategia e agilidade, e caso consiga escapar, irá descobrir quem está por trás de tudo isso.</p>
-        <button class="callToAction">Jogar Agora</button>
+        <button class="callToAction" onclick="startPlaying()">Jogar Agora</button>
       </div>
       <div id="footer-rightside">
         <div id="footer-social-container">
           <span id="footer-social-container-title">Nos siga nas redes sociais!</span>
-          <a class="footer-social-item">
+          <a class="footer-social-item" href="https://pointerpointer.com/">
             <span class="footer-social-item-at">FennekoCorp</span>
             <div class="footer-social-item-icon-wrapper">
               <img src="./assets/images/instagramLogo.png">
             </div>
           </a>
-          <a class="footer-social-item">
+          <a class="footer-social-item" href="https://www.youtube.com/watch?v=gZ4gghU7H4o">
             <span class="footer-social-item-at">Fenneko_Corporation</span>
             <div class="footer-social-item-icon-wrapper">
               <img src="./assets/images/FacebookLogo.png">
             </div>
           </a>
-          <a class="footer-social-item">
+          <a class="footer-social-item" href="https://youtube.com/@felpslive?si=tu4Y-mfdOFcsQ-gd">
             <span class="footer-social-item-at">Fenneko-Corp</span>
             <div class="footer-social-item-icon-wrapper">
               <img src="./assets/images/TikTokLogo.png">
             </div>
           </a>
-          <a class="footer-social-item">
+          <a class="footer-social-item" href="https://youtu.be/01e5SAvJfpg?si=lIgpZS_TRckZe8-N">
             <span class="footer-social-item-at">FenneCo_LTDA</span>
             <div class="footer-social-item-icon-wrapper">
               <img src="./assets/images/RedditLogo.png">
@@ -209,14 +253,15 @@
           </a>
         </div>
         <nav id="footer-navigation">
-          <a class="footer-nav-item" href="#">Home</a>
+          <a class="footer-nav-item" href="#" onclick="scrollTo(0,0)">Home</a>
           <a class="footer-nav-item" href="#reviews">Reviews</a>
           <a class="footer-nav-item" href="#about">Sobre</a>
           <a class="footer-nav-item" href="#purchase">Comprar</a>
           <a class="footer-nav-item" href="#team">Equipe</a>
-          <a class="footer-nav-item" href="./">Politicas e privacidade</a>
+          <a class="footer-nav-item" href="https://www.youtube.com/watch?v=b-Cr0EWwaTk">Politicas e privacidade</a>
         </nav>
       </div>
     </footer>
+    <video id="trailer-video" src="./assets/videos/VHSCutscene.mp4" aria-hidden="true" muted></video>
   </body>
 </html>
