@@ -95,6 +95,7 @@ body {
   position: absolute;
   top: -1000vh;
   pointer-events: none;
+  width: 10vw;
 }
 
 #skipnavigation:focus {
@@ -935,6 +936,7 @@ body.isPlaying .only-show-when-playing {
 
   section {
     scroll-margin: 4.25rem;
+    overflow-x: hidden;
   }
 
   .mobile-only {
